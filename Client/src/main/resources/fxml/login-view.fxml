@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      spacing="10"
+      alignment="CENTER"
+      stylesheets="@/static/styles.css"
+      fx:controller="org.example.client.controller.LoginViewController"
+      prefWidth="300"
+      prefHeight="400">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Sign in" styleClass="header-label"/>
+
+    <TextField fx:id="usernameField"
+               promptText="Username"
+               maxWidth="250"/>
+
+    <PasswordField fx:id="passwordField"
+                   promptText="Password"
+                   maxWidth="250"/>
+
+    <Button text="Log in"
+            defaultButton="true"
+            maxWidth="250"
+            onAction="#handleLogin"/>
+
+    <Hyperlink text="Don't have account? Create account"
+               onAction="#switchToRegister"/>
+
+</VBox>

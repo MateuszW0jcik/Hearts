@@ -1,0 +1,244 @@
+.root {
+    -fx-background-color: #1a1a1a;
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.header-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 0 0 20 0;
+}
+
+.header-label-smaller {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.text-field, .password-field {
+    -fx-background-color: #2d2d2d;
+    -fx-background-radius: 4px;
+    -fx-border-color: #3d3d3d;
+    -fx-border-radius: 4px;
+    -fx-padding: 10px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #ffffff;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #0099ff;
+    -fx-border-width: 2px;
+}
+
+.text-field .prompt-text, .password-field .prompt-text {
+    -fx-text-fill: #808080;
+}
+
+.button {
+    -fx-background-color: #0099ff;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #007acc;
+}
+
+.button:pressed {
+    -fx-background-color: #006bb3;
+}
+
+.hyperlink {
+    -fx-text-fill: #0099ff;
+    -fx-font-size: 13px;
+    -fx-border-color: transparent;
+    -fx-padding: 4px;
+}
+
+.hyperlink:hover {
+    -fx-text-fill: #007acc;
+    -fx-underline: true;
+}
+
+/* Style dla alertów */
+.dialog-pane {
+    -fx-background-color: #2d2d2d;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #3d3d3d;
+}
+
+.dialog-pane .content {
+    -fx-text-fill: #ffffff;
+}
+
+.dialog-pane .button {
+    -fx-background-color: #0099ff;
+}
+
+.dialog-pane .button:hover {
+    -fx-background-color: #007acc;
+}
+
+.dialog-pane > .content.label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 18px;
+}
+
+/* Style dla pól z błędami walidacji */
+.text-field.validation-error, .password-field.validation-error {
+    -fx-border-color: #cc0000;
+}
+
+.validation-error-label {
+    -fx-text-fill: #ff4444;
+    -fx-font-size: 12px;
+    -fx-padding: 4px 0 0 0;
+}
+
+/* Kontener formularza */
+.form-container {
+    -fx-background-color: #2d2d2d;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 2);
+    -fx-padding: 30px;
+}
+
+/* Style dla labeli */
+.label {
+    -fx-text-fill: #ffffff;
+}
+
+.table-view {
+    -fx-background-color: #2d2d2d;
+    -fx-table-cell-border-color: #3d3d3d;
+}
+
+.table-view .column-header {
+    -fx-background-color: #3d3d3d;
+    -fx-text-fill: white;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: white;
+    -fx-alignment: CENTER;
+}
+
+.table-view .table-column {
+    -fx-pref-width: 96px;
+}
+
+.table-row-cell {
+    -fx-background-color: #2d2d2d;
+}
+
+.table-view {
+    -fx-scroll-bar-policy: NEVER;
+}
+
+.right-section {
+    -fx-border-color: #3d3d3d;
+    -fx-border-width: 0 0 0 1;
+    -fx-padding: 10;
+    -fx-pref-width: 300px;
+    -fx-fill-height: true;
+}
+
+/* Style dla czatu */
+.list-view {
+    -fx-background-color: #2d2d2d;
+    -fx-fit-to-height: true;
+}
+
+.list-cell {
+    -fx-background-color: #2d2d2d;
+    -fx-text-fill: white;
+    -fx-padding: 5;
+}
+
+.player-name {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 5px;
+    -fx-text-fill: white;
+}
+
+.opponent-cards {
+    -fx-padding: 5px;
+}
+
+.score-board {
+    -fx-padding: 10;
+    -fx-background-color: #2d2d2d;
+    -fx-text-fill: white;
+}
+
+.trick-area {
+}
+
+.player-hand {
+    -fx-padding: 5px;
+}
+
+.info-panel {
+    -fx-padding: 10px;
+}
+
+.info-label {
+    -fx-font-size: 14px;
+    -fx-padding: 5px 10px;
+    -fx-text-fill: white;
+}
+
+/*.player-label {*/
+/*    -fx-text-fill: white;*/
+/*}*/
+
+/* Dodatkowe style dla elementów czatu, które mogą nie być uwzględnione w głównym CSS */
+.chat-messages {
+    -fx-background-color: #2d2d2d;
+    -fx-text-fill: white;
+    -fx-wrap-text: true;
+    -fx-padding: 5px;
+    -fx-cell-size: auto;
+    -fx-pref-width: 200px;
+}
+
+.scroll-bar {
+    -fx-background-color: #3d3d3d;
+    -fx-background-radius: 5px;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-radius: 5px;
+}
+
+.chat-input {
+    -fx-background-color: #3d3d3d;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #808080;
+}
+
+.mute-button {
+    -fx-background-radius: 20;
+    -fx-min-width: 32;
+    -fx-min-height: 32;
+    -fx-background-color: #44ff44;
+}
+
+.mute-button:hover {
+    -fx-background-color: #44ff44;
+}
+
+.mute-button.muted {
+    -fx-background-color: #ff4444;
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      spacing="10"
+      alignment="CENTER"
+      stylesheets="@/static/styles.css"
+      fx:controller="org.example.client.controller.RegisterViewController"
+      prefWidth="300"
+      prefHeight="400">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Create account" styleClass="header-label"/>
+
+    <TextField fx:id="usernameField"
+               promptText="Username"
+               maxWidth="250"/>
+
+    <TextField fx:id="emailField"
+               promptText="Email"
+               maxWidth="250"/>
+
+    <PasswordField fx:id="passwordField"
+                   promptText="Password"
+                   maxWidth="250"/>
+
+    <PasswordField fx:id="confirmPasswordField"
+                   promptText="Confirm password"
+                   maxWidth="250"/>
+
+    <Button text="Create account"
+            defaultButton="true"
+            maxWidth="250"
+            onAction="#handleRegister"/>
+
+    <Hyperlink text="Already have an account? Sing in"
+               onAction="#switchToLogin"/>
+
+</VBox>

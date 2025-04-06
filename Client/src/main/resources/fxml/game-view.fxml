@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.image.ImageView?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.client.controller.GameViewController"
+            stylesheets="@/static/styles.css"
+            prefWidth="1100" prefHeight="800">
+
+    <center>
+        <StackPane>
+            <!-- Opponent names and cards -->
+            <BorderPane>
+                <top>
+                    <HBox spacing="5" styleClass="info-panel">
+                        <padding>
+                            <Insets top="10" right="10" bottom="10" left="10"/>
+                        </padding>
+                        <VBox>
+                            <Label fx:id="currentPlayerLabel" styleClass="info-label"/>
+                        </VBox>
+                        <VBox>
+                            <Label fx:id="roundLabel" styleClass="info-label"/>
+                        </VBox>
+                        <VBox>
+                            <Label fx:id="phaseLabel" styleClass="info-label"/>
+                        </VBox>
+                    </HBox>
+                </top>
+                <!-- Top opponent -->
+                <center>
+                    <BorderPane>
+                        <top>
+                            <VBox alignment="CENTER" spacing="10">
+                                <HBox fx:id="topPlayerCards" alignment="CENTER" styleClass="opponent-cards"/>
+                                <Label fx:id="topPlayerName" styleClass="player-name"/>
+                            </VBox>
+                        </top>
+
+                        <!-- Left opponent -->
+                        <left>
+                            <HBox alignment="CENTER" spacing="10">
+                                <VBox fx:id="leftPlayerCards" alignment="CENTER" styleClass="opponent-cards"/>
+                                <Label fx:id="leftPlayerName" styleClass="player-name" rotate="90"/>
+                            </HBox>
+                        </left>
+
+                        <!-- Right opponent -->
+                        <right>
+                            <HBox alignment="CENTER" spacing="10">
+                                <Label fx:id="rightPlayerName" styleClass="player-name" rotate="-90"/>
+                                <VBox fx:id="rightPlayerCards" alignment="CENTER" styleClass="opponent-cards"/>
+                            </HBox>
+                        </right>
+
+                        <!-- Center game area -->
+                        <center>
+                            <VBox alignment="CENTER" spacing="50">
+                                <HBox fx:id="currentTrick" alignment="CENTER" styleClass="trick-area">
+                                    <padding>
+                                        <Insets top="20" right="20" bottom="20" left="20"/>
+                                    </padding>
+                                </HBox>
+                            </VBox>
+                        </center>
+
+                        <bottom>
+                            <!-- Player's cards at bottom -->
+                            <VBox alignment="BOTTOM_CENTER" StackPane.alignment="BOTTOM_CENTER">
+                                <Label fx:id="bottomPlayerName" styleClass="player-name"/>
+                                <HBox fx:id="playerCards" alignment="CENTER" styleClass="player-hand">
+                                    <padding>
+                                        <Insets top="20" right="20" bottom="20" left="20"/>
+                                    </padding>
+                                </HBox>
+                            </VBox>
+                        </bottom>
+                    </BorderPane>
+                </center>
+            </BorderPane>
+        </StackPane>
+    </center>
+
+    <right>
+        <VBox spacing="20" styleClass="right-section" VBox.vgrow="ALWAYS">
+            <!-- Invite player section -->
+            <VBox spacing="10" VBox.vgrow="NEVER">
+                <Label styleClass="header-label-smaller">Invite player</Label>
+                <HBox spacing="10">
+                    <TextField fx:id="inviteUsername" promptText="Username" HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="invitePlayerButton" text="Invite" onAction="#handleInvitePlayer"/>
+                </HBox>
+            </VBox>
+
+            <VBox spacing="10" fx:id="scoreBoard" styleClass="score-board" VBox.vgrow="NEVER">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+            </VBox>
+
+            <VBox spacing="10" VBox.vgrow="ALWAYS">
+                <Label text="Chat" styleClass="header-label-smaller"/>
+                <ListView fx:id="chatMessages" VBox.vgrow="ALWAYS" styleClass="chat-messages"/>
+                <HBox spacing="10" VBox.vgrow="NEVER">
+                    <Button fx:id="muteButton" styleClass="mute-button" onAction="#handleMuteToggle">
+                        <graphic>
+                            <ImageView fx:id="micIcon" fitHeight="16" fitWidth="16"/>
+                        </graphic>
+                    </Button>
+                    <TextField fx:id="chatInput" promptText="Message" HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="sendMessageButton" text="➤" onAction="#handleSendMessage"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </right>
+
+</BorderPane>
+
+
